@@ -15,7 +15,7 @@ gender <- factor(c("male", "female", "male"))
 blood <- factor(c("O", "AB", "A"), levels = c("A", "B", "AB", "O"))
 
 #Ordinal Value Vector
-symptons <- factor(c("mild", "severe", "moderate"), levels = c("mild", "moderate", "severe"), ordered = TRUE) #??ȣ ????
+symptons <- factor(c("mild", "severe", "moderate"), levels = c("mild", "moderate", "severe"), ordered = TRUE)
 symptons
 symptons > "moderate"
 subject_name[symptons > "moderate"]
