@@ -31,22 +31,30 @@ pt_data[1,]
 pt_data[,]
 pt_data[c(1,3), c("temperature", "gender")]
 
+aggregate(pt_data$temperature, by=list(pt_data$flu_status), mean)
+
 Tdata <- read.csv("class0909/HH_trips_data.csv")
+typeof(Tdata)
+str(Tdata)
 summary(Tdata)
 
 Myvars <- c("HHsize", "HHincome", "NofTrips", "Auto_share")
 summary(Tdata[Myvars])
 
+Tdata$Region
+str(Tdata$Region)
+summary(Tdata$Region)
 table(Tdata$Region)
 table(Tdata$Region, Tdata$Car_own)
 
 Mytable <- table(Tdata$Region,Tdata$Car_own)
-addmargins(Mytable)
+addmargins(Mytable) #Show "Sum" Information
 
-prop.table(Mytable)
+addmargins(prop.table(Mytable))
 prop.table(Mytable, 1)
+prop.table(Mytable, 2)
 
-aggregate(Tdata[Myvars], by=list(Tdata$Region),mean)
+aggregate(Tdata[Myvars], by=list(Tdata$Region), mean)
 aggregate(Tdata[Myvars], by=list(Tdata$Region), sd)
 
 install.packages("vcd")
